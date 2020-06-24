@@ -11,7 +11,6 @@
 
 <!-- Beginning of JS -->
 <script>
-
    // Game score variables
    let playerWin = 0;
    let computerWin = 0;
@@ -30,7 +29,7 @@
 
    // Function gets player game option
    function playerSelection() {
-      return window.prompt("Play a round of Rock, Paper, Scissors! Type option you select.", "Rock, Paper or Scissors?");
+      return window.prompt("Play a round of Rock, Paper, Scissors! Type option you want to play.", "Rock, Paper or Scissors?");
    }
 
    // Function gets computer game option
@@ -46,22 +45,22 @@
       console.log(computer);
 
       if (player === computer){
-         alert("A draw!");
+         return ("A draw!");
       } // Player wins, computer loose
       else if (player == "rock" && computer == "scissors" || player == "scissors" && computer == "paper" || player == "paper" && computer == "rock") {
-         alert(`${player} beats ${computer}. You win!`);
          playerWin++;
+         return (`${player} beats ${computer}. You win!`);
       } // Player loose, computer wins
       else if (computer == "rock" && player == "scissors" || computer == "scissors" && player == "paper" || computer == "paper" && player == "rock") {
-         alert(`${computer} beats ${player}. You loose!`);
          computerWin++;
+         return (`${computer} beats ${player}. You loose!`);
       }
 
    }
 
    function game() {
       for(let i = 0; i < 5; i++){
-         playRound();
+         alert(playRound());
       }
 
       if (playerWin > computerWin){
