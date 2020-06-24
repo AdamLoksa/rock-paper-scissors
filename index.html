@@ -11,32 +11,33 @@
 
 <!-- Beginning of JS -->
 <script>
+   
    // Game score variables
    let playerWin = 0;
    let computerWin = 0;
 
-   // Function generates computer option
+   // Get computer option
    function computerPlay() {
       let gameOptions = ["rock", "paper", "scissors"];
       return gameOptions[randomNumber(0,2)];
    }
 
-   // Function generates random number
-   // Min and max are inclusive
+   // Get random number from interval, min and max are inclusive
    function randomNumber(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
    }
 
-   // Function gets player game option
+   // Get player option
    function playerSelection() {
       return window.prompt("Play a round of Rock, Paper, Scissors! Type option you want to play.", "Rock, Paper or Scissors?");
    }
 
-   // Function gets computer game option
+   // Get computer option
    function computerSelection() {
       return computerPlay();
    }
  
+   // Get winner of the round
    function playRound(){
       let player = playerSelection().toLowerCase();
       let computer = computerSelection();
@@ -46,11 +47,13 @@
 
       if (player === computer){
          return ("A draw!");
-      } // Player wins, computer loose
+      } 
+      // Player wins, computer loose
       else if (player == "rock" && computer == "scissors" || player == "scissors" && computer == "paper" || player == "paper" && computer == "rock") {
          playerWin++;
          return (`${player} beats ${computer}. You win!`);
-      } // Player loose, computer wins
+      } 
+      // Player loose, computer wins
       else if (computer == "rock" && player == "scissors" || computer == "scissors" && player == "paper" || computer == "paper" && player == "rock") {
          computerWin++;
          return (`${computer} beats ${player}. You loose!`);
@@ -58,6 +61,7 @@
 
    }
 
+   // Play 5 games and display winner
    function game() {
       for(let i = 0; i < 5; i++){
          alert(playRound());
