@@ -11,10 +11,11 @@
 
 <!-- Beginning of JS -->
 <script>
-   
+
    // Game score variables
    let playerWin = 0;
    let computerWin = 0;
+
 
    // Get computer option
    function computerPlay() {
@@ -22,21 +23,25 @@
       return gameOptions[randomNumber(0,2)];
    }
 
+
    // Get random number from interval, min and max are inclusive
    function randomNumber(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
    }
+
 
    // Get player option
    function playerSelection() {
       return window.prompt("Play a round of Rock, Paper, Scissors! Type option you want to play.", "Rock, Paper or Scissors?");
    }
 
+
    // Get computer option
    function computerSelection() {
       return computerPlay();
    }
  
+
    // Get winner of the round
    function playRound(){
       let player = playerSelection().toLowerCase();
@@ -61,6 +66,7 @@
 
    }
 
+
    // Play 5 games and display winner
    function game() {
       for(let i = 0; i < 5; i++){
@@ -76,6 +82,8 @@
       }
    }
 
+   
+   // Start a game
    game();
 
 </script>
