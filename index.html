@@ -4,87 +4,43 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Rock, Paper, Scissors Game</title>
+   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="site">
+   <header class="container">
+      <h1>Rock, Paper, Scissors game</h1>
+      <h2 id="winner">Be the first to win 5 rounds</h2>
+   </header>
+
+   <main class="site-content">
+      <div class="container">
+         <div class="game">
+            <div class="player">
+               <img id="rock" class="player__option" src="./img/rock-left.png" alt="Rock">
+               <img id="paper" class="player__option" src="./img/paper-left.png" alt="Rock">
+               <img id="scissors" class="player__option" src="./img/scissors-left.png" alt="Rock">
+            </div>
    
+            <div class="score">
+               <p class="score__player">0</p>
+               <p class="score__computer">0</p>
+            </div>
+   
+            <div class="computer computer__option">
+               <img id="computer-option" src="./img/rock-right.png" alt="Computer Option">
+            </div>
+         </div>
+        <div class="again">
+            <img id="play-again" src="./img/play_again.png" alt="Play Again">
+        </div>
+      </div>
+   </main>
+
+   <footer>
+      <a href="https://github.com/AdamLoksa" target="blank" class="link"><img src="./img/github_logo.png" alt=""></a>
+   </footer>
 </body>
 
 <!-- Beginning of JS -->
-<script>
-
-   // Game score variables
-   let playerWin = 0;
-   let computerWin = 0;
-
-
-   // Get computer option
-   function computerPlay() {
-      let gameOptions = ["rock", "paper", "scissors"];
-      return gameOptions[randomNumber(0,2)];
-   }
-
-
-   // Get random number from interval, min and max are inclusive
-   function randomNumber(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-   }
-
-
-   // Get player option
-   function playerSelection() {
-      return window.prompt("Play a round of Rock, Paper, Scissors! Type option you want to play.", "Rock, Paper or Scissors?");
-   }
-
-
-   // Get computer option
-   function computerSelection() {
-      return computerPlay();
-   }
- 
-
-   // Get winner of the round
-   function playRound(){
-      let player = playerSelection().toLowerCase();
-      let computer = computerSelection();
-
-      console.log(player);
-      console.log(computer);
-
-      if (player === computer){
-         return ("A draw!");
-      } 
-      // Player wins, computer loose
-      else if (player == "rock" && computer == "scissors" || player == "scissors" && computer == "paper" || player == "paper" && computer == "rock") {
-         playerWin++;
-         return (`${player} beats ${computer}. You win!`);
-      } 
-      // Player loose, computer wins
-      else if (computer == "rock" && player == "scissors" || computer == "scissors" && player == "paper" || computer == "paper" && player == "rock") {
-         computerWin++;
-         return (`${computer} beats ${player}. You loose!`);
-      }
-
-   }
-
-
-   // Play 5 games and display winner
-   function game() {
-      for(let i = 0; i < 5; i++){
-         alert(playRound());
-      }
-
-      if (playerWin > computerWin){
-         alert(`You win ${playerWin} to ${computerWin}.`)
-      } else if (playerWin < computerWin) {
-         alert(`You loose ${playerWin} to ${computerWin}.`)
-      } else {
-         alert("A draw!")
-      }
-   }
-
-   
-   // Start a game
-   game();
-
-</script>
+<script type="text/javascript" src="app.js"></script>
 </html>

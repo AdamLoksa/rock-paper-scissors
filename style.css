@@ -1,0 +1,155 @@
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+
+   margin: 0;
+   padding: 0;
+}
+
+
+/* General styling */
+.container {
+   max-width: 95%;
+   width: 800px;
+   margin: 0 auto;
+}
+
+img {
+   max-width: 100%;
+   display: block;
+}
+
+.site {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+}
+
+.site-content {
+   flex: 1;
+}
+
+/* Typography */
+body {
+   font-family: Helvetica, sans-serif;
+   height: 100%;
+   position: relative;
+}
+
+h1 {
+   font-size: 2rem;
+   text-align: center;
+   margin: 2rem 0 1rem 0;
+}
+
+h2 {
+   font-size: 1.5rem;
+   font-weight: 300;
+   text-align: center;
+   margin-bottom: 1rem;
+}
+
+/*  */
+
+/* Layout */
+
+.game {
+  margin: 7rem 1rem 0 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player__option {
+   margin-bottom: 2rem;
+   transition: transform 0.2s ease-in-out;
+}
+
+.player__option,
+.computer__option {
+   padding: 1rem;
+}
+
+.player__option:hover {
+   cursor: pointer;
+   transform: scale(1.2);
+}
+
+.player,
+.computer {
+   max-width: 100px;
+}
+
+.again {
+   max-width: 35px;
+   margin: 0 auto;
+}
+
+.again:hover {
+   cursor: pointer;
+   animation: rotation 0.5s ease-in-out;
+}
+
+@keyframes rotation {
+   from {
+     transform: rotate(0deg);
+   }
+   to {
+     transform: rotate(360deg);
+   }
+ }
+
+#computer-option {
+   opacity: 0;
+}
+
+.computer__option,
+.score {
+   padding-bottom: 3rem;
+}
+
+.score__player,
+.score__computer {
+   min-width: 50px;
+   margin: 0.5rem;
+   display: inline-block;
+   font-size: 2rem;
+   font-weight: 100;
+   text-align: center;
+   border: 1px solid #333;
+   border-radius: 10px;
+}
+
+.link {
+   display: block;
+   width: 50px;
+   margin: 1rem;
+   transition: transform 0.2s ease-in-out;
+}
+
+.link:hover {
+   cursor: pointer;
+   transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 600px) {
+   h1 {
+      font-size: 1.5rem;
+   }
+
+   h2 {
+      font-size: 1rem;
+   }
+
+   .game {
+      margin-top: 2rem;
+      flex-direction: column;
+   }
+
+   .player {
+      display: flex;
+      justify-content: center;
+   }
+ }
