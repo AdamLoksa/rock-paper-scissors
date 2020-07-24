@@ -119,7 +119,7 @@ function setWinner() {
       winner.textContent = "You win!";
       playerScore.style = "border: 3px solid green";
    } else {
-      winner.textContent = "You loose!";
+      winner.textContent = "You lose!";
       computerScore.style = "border: 3px solid red";
    }
 }
